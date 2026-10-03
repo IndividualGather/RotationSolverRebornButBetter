@@ -1,0 +1,112 @@
+From d894711a9b8f1a309bd61557758dc384defd5782 Mon Sep 17 00:00:00 2001
+From: Individual Gather <individual.gather@noreply.local>
+Date: Sat, 3 Oct 2026 16:38:03 +0200
+Subject: [PATCH 2/2] Brand the fork: teal settings window accents, fork logo
+ and window title
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+---
+ RotationSolver/Data/UiString.cs               |  2 +-
+ RotationSolver/UI/RotationConfigWindow.cs     |  8 ++--
+ .../UI/RotationConfigWindow_Branding.cs       | 44 +++++++++++++++++++
+ 3 files changed, 49 insertions(+), 5 deletions(-)
+ create mode 100644 RotationSolver/UI/RotationConfigWindow_Branding.cs
+
+diff --git a/RotationSolver/Data/UiString.cs b/RotationSolver/Data/UiString.cs
+index 5448e641..dc2509c7 100644
+--- a/RotationSolver/Data/UiString.cs
++++ b/RotationSolver/Data/UiString.cs
+@@ -650,7 +650,7 @@ namespace RotationSolver.Data
+ 		[Description("Disable RSR combat rotation state")]
+ 		Commands_Off,
+ 
+-		[Description("Rotation Solver Reborn Settings v")]
++		[Description("RotationSolverRebornButBetter Settings v")]
+ 		ConfigWindowHeader,
+ 
+ 		[Description("This config is job-specific")]
+diff --git a/RotationSolver/UI/RotationConfigWindow.cs b/RotationSolver/UI/RotationConfigWindow.cs
+index 463e6c3a..889b5d55 100644
+--- a/RotationSolver/UI/RotationConfigWindow.cs
++++ b/RotationSolver/UI/RotationConfigWindow.cs
+@@ -286,11 +286,11 @@ public partial class RotationConfigWindow : Window
+ 
+ 			if (CNLanguageClient)
+ 			{
+-				logoUrl = $"https://v6.gh-proxy.org/https://raw.githubusercontent.com/{Service.USERNAME}/{Service.REPO}/main/Images/Logo.png";
++				logoUrl = $"https://v6.gh-proxy.org/https://raw.githubusercontent.com/IndividualGather/RotationSolverRebornButBetter/main/branding/Logo.png";
+ 			}
+ 			else
+ 			{
+-				logoUrl = $"https://raw.githubusercontent.com/{Service.USERNAME}/{Service.REPO}/main/Images/Logo.png";
++				logoUrl = $"https://raw.githubusercontent.com/IndividualGather/RotationSolverRebornButBetter/main/branding/Logo.png";
+ 			}
+ 			if (ThreadLoadImageHandler.TryGetTextureWrap(logoUrl, out var logo) && logo != null)
+ 			{
+@@ -807,11 +807,11 @@ public partial class RotationConfigWindow : Window
+ 
+ 						if (CNLanguageClient)
+ 						{
+-							logoUrl = $"https://v6.gh-proxy.org/https://raw.githubusercontent.com/{Service.USERNAME}/{Service.REPO}/main/Images/Logo.png";
++							logoUrl = $"https://v6.gh-proxy.org/https://raw.githubusercontent.com/IndividualGather/RotationSolverRebornButBetter/main/branding/Logo.png";
+ 						}
+ 						else
+ 						{
+-							logoUrl = $"https://raw.githubusercontent.com/{Service.USERNAME}/{Service.REPO}/main/Images/Logo.png";
++							logoUrl = $"https://raw.githubusercontent.com/IndividualGather/RotationSolverRebornButBetter/main/branding/Logo.png";
+ 						}
+ 						if (ThreadLoadImageHandler.TryGetTextureWrap(logoUrl, out var logo) && logo?.Handle != null)
+ 						{
+diff --git a/RotationSolver/UI/RotationConfigWindow_Branding.cs b/RotationSolver/UI/RotationConfigWindow_Branding.cs
+new file mode 100644
+index 00000000..f201497b
+--- /dev/null
++++ b/RotationSolver/UI/RotationConfigWindow_Branding.cs
+@@ -0,0 +1,44 @@
++namespace RotationSolver.UI;
++
++/// <summary>
++/// Teal accent colors for the settings window, marking this build as a fork of RotationSolverReborn.
++/// </summary>
++public partial class RotationConfigWindow
++{
++	private static readonly (ImGuiCol Col, Vector4 Color)[] _brandColors =
++	[
++		(ImGuiCol.TitleBg, new Vector4(0.05f, 0.25f, 0.23f, 1f)),
++		(ImGuiCol.TitleBgActive, new Vector4(0.08f, 0.42f, 0.39f, 1f)),
++		(ImGuiCol.TitleBgCollapsed, new Vector4(0.05f, 0.25f, 0.23f, 0.75f)),
++		(ImGuiCol.Header, new Vector4(0.10f, 0.50f, 0.46f, 0.45f)),
++		(ImGuiCol.HeaderHovered, new Vector4(0.12f, 0.60f, 0.55f, 0.75f)),
++		(ImGuiCol.HeaderActive, new Vector4(0.14f, 0.68f, 0.62f, 1f)),
++		(ImGuiCol.Button, new Vector4(0.10f, 0.50f, 0.46f, 0.55f)),
++		(ImGuiCol.ButtonHovered, new Vector4(0.12f, 0.60f, 0.55f, 0.85f)),
++		(ImGuiCol.ButtonActive, new Vector4(0.14f, 0.68f, 0.62f, 1f)),
++		(ImGuiCol.FrameBgHovered, new Vector4(0.10f, 0.50f, 0.46f, 0.35f)),
++		(ImGuiCol.FrameBgActive, new Vector4(0.12f, 0.60f, 0.55f, 0.55f)),
++		(ImGuiCol.CheckMark, new Vector4(0.25f, 0.85f, 0.78f, 1f)),
++		(ImGuiCol.SliderGrab, new Vector4(0.18f, 0.72f, 0.66f, 1f)),
++		(ImGuiCol.SliderGrabActive, new Vector4(0.25f, 0.85f, 0.78f, 1f)),
++		(ImGuiCol.Separator, new Vector4(0.10f, 0.50f, 0.46f, 0.6f)),
++		(ImGuiCol.ResizeGrip, new Vector4(0.10f, 0.50f, 0.46f, 0.3f)),
++		(ImGuiCol.ResizeGripHovered, new Vector4(0.12f, 0.60f, 0.55f, 0.7f)),
++		(ImGuiCol.ResizeGripActive, new Vector4(0.14f, 0.68f, 0.62f, 1f)),
++	];
++
++	public override void PreDraw()
++	{
++		foreach (var (col, color) in _brandColors)
++		{
++			ImGui.PushStyleColor(col, color);
++		}
++		base.PreDraw();
++	}
++
++	public override void PostDraw()
++	{
++		ImGui.PopStyleColor(_brandColors.Length);
++		base.PostDraw();
++	}
++}
+-- 
+2.45.1.windows.1
+

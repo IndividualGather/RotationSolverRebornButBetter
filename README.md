@@ -1,4 +1,4 @@
-# RotationSolver (patched)
+# RotationSolverRebornButBetter
 
 Automated build of [RotationSolverReborn](https://github.com/FFXIV-CombatReborn/RotationSolverReborn)
 with a small patch that loads extra rotation DLLs from
@@ -19,8 +19,8 @@ If the patches stop applying, the run fails and GitHub notifies you.
 
 1. Uninstall the official Rotation Solver Reborn (same internal name; settings are kept).
 2. Dalamud Settings > Experimental > Custom Plugin Repositories, add
-   `https://raw.githubusercontent.com/IndividualGather/RotationSolverReborn-Custom/main/repo.json`.
-3. Install "Rotation Solver Reborn (Custom)".
+   `https://raw.githubusercontent.com/IndividualGather/RotationSolverRebornButBetter/main/repo.json`.
+3. Install "RotationSolverRebornButBetter".
 
 ## Updating the patch
 
@@ -31,3 +31,9 @@ git format-patch origin/main..custom-loader -o <this repo>/patches
 ```
 
 Bump `PATCH_REVISION` whenever the patch changes so Dalamud sees a newer version.
+
+## Branding
+
+`patches/0002-*` gives the settings window teal accents, the teal logo from `branding/Logo.png` and a
+"RotationSolverRebornButBetter" title. The workflow also renames the plugin in its manifest. The internal
+name stays `RotationSolver`, so settings and other plugins' RSR integrations are unaffected.
