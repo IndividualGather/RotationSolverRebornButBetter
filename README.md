@@ -8,7 +8,8 @@ or supported by them; please don't report issues with this fork upstream.
 
 The official plugin only runs the rotations built into it. This fork is an automated build
 with a small patch that loads extra rotation DLLs from
-`%APPDATA%\XIVLauncher\pluginConfigs\RotationSolver\CustomRotations\`.
+`%APPDATA%\XIVLauncher\pluginConfigs\RotationSolver\CustomRotations\`, so custom rotations can be
+maintained separately instead of in a full fork of the plugin. Everything else is unchanged.
 
 ## How it works
 
