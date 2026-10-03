@@ -28,19 +28,3 @@ If the patches stop applying, the run fails and GitHub notifies you.
 2. Dalamud Settings > Experimental > Custom Plugin Repositories, add
    `https://raw.githubusercontent.com/IndividualGather/RotationSolverRebornButBetter/main/repo.json`.
 3. Install "RotationSolverRebornButBetter".
-
-## Updating the patch
-
-The patch lives as a commit on top of upstream `main` (branch `custom-loader` in the RSR checkout):
-
-```sh
-git format-patch origin/main..custom-loader -o <this repo>/patches
-```
-
-Bump `PATCH_REVISION` whenever the patch changes so Dalamud sees a newer version.
-
-## Branding
-
-`patches/0002-*` gives the settings window teal accents, the teal logo from `branding/Logo.png` and a
-"RotationSolverRebornButBetter" title. The workflow also renames the plugin in its manifest. The internal
-name stays `RotationSolver`, so settings and other plugins' RSR integrations are unaffected.
