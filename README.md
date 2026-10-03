@@ -19,7 +19,7 @@ If the patches stop applying, the run fails and GitHub notifies you.
 
 1. Uninstall the official Rotation Solver Reborn (same internal name; settings are kept).
 2. Dalamud Settings > Experimental > Custom Plugin Repositories, add
-   `https://raw.githubusercontent.com/<owner>/<repo>/main/repo.json`.
+   `https://raw.githubusercontent.com/IndividualGather/RotationSolverReborn-Custom/main/repo.json`.
 3. Install "Rotation Solver Reborn (Custom)".
 
 ## Updating the patch
