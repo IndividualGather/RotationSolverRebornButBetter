@@ -92,6 +92,17 @@ jobs:
           $manifestPath = 'RotationSolver/RotationSolver.json'
           $m = Get-Content $manifestPath -Raw | ConvertFrom-Json
           $m.Name = 'RotationSolverRebornButBetter'
+          $m.Author = "$($m.Author) (fork by IndividualGather)"
+          $m.Description = @(
+            "An unofficial fork of Rotation Solver Reborn by The Combat Reborn Team: https://github.com/FFXIV-CombatReborn/RotationSolverReborn"
+            "All credit for the plugin goes to the original authors."
+            ""
+            "Why this fork exists: the official plugin only runs the rotations built into it. This fork adds a single feature: it also loads rotation DLLs from the CustomRotations folder in the plugin's config directory, so custom rotations can be maintained separately instead of in a full fork of the plugin."
+            ""
+            "Everything else is unchanged. It is rebuilt automatically from every official release, with a teal theme to tell it apart."
+            ""
+            "Not affiliated with or supported by The Combat Reborn Team. Please don't report issues with this fork to them."
+          ) -join "`n"
           $m.Punchline = "$($m.Punchline) Loads extra rotations from the CustomRotations config folder."
           $m.IconUrl = "https://raw.githubusercontent.com/$env:GITHUB_REPOSITORY/main/branding/Logo.png"
           $m.RepoUrl = "https://github.com/$env:GITHUB_REPOSITORY"

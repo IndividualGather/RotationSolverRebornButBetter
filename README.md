@@ -1,6 +1,12 @@
 # RotationSolverRebornButBetter
 
-Automated build of [RotationSolverReborn](https://github.com/FFXIV-CombatReborn/RotationSolverReborn)
+An unofficial fork of [Rotation Solver Reborn](https://github.com/FFXIV-CombatReborn/RotationSolverReborn)
+by The Combat Reborn Team. All credit for the plugin goes to the original authors. This repo is not affiliated with
+or supported by them; please don't report issues with this fork upstream.
+
+## Why this fork exists
+
+The official plugin only runs the rotations built into it. This fork is an automated build
 with a small patch that loads extra rotation DLLs from
 `%APPDATA%\XIVLauncher\pluginConfigs\RotationSolver\CustomRotations\`.
 
