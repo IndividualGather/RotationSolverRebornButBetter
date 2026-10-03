@@ -1,12 +1,12 @@
 [
   {
     "Author": "The Combat Reborn Team",
-    "Name": "Rotation Solver Reborn (Custom)",
+    "Name": "RotationSolverRebornButBetter",
     "InternalName": "RotationSolver",
-    "AssemblyVersion": "7.5.6.1301",
+    "AssemblyVersion": "7.5.6.1302",
     "Description": "Analyses combat information every frame and finds the best action.\n\nThis means almost all the information available in one frame in combat, including the status of all players in the party, the status of any hostile targets, skill cooldowns, the MP and HP of characters, the location of characters, casting status of the hostile target, combo, combat duration, player level, etc.\nThen, it will highlight the best action on the hot bar, or help you to click on it.\nIt is designed for `general combat`, not for savage or ultimate. Use it carefully.",
     "ApplicableVersion": "any",
-    "RepoUrl": "https://github.com/FFXIV-CombatReborn/RotationSolverReborn",
+    "RepoUrl": "https://github.com/IndividualGather/RotationSolverRebornButBetter",
     "Tags": [
       "combat",
       "rotation",
@@ -23,13 +23,13 @@
     "LoadSync": false,
     "CanUnloadAsync": false,
     "LoadPriority": 0,
-    "IconUrl": "https://raw.githubusercontent.com/FFXIV-CombatReborn/RebornAssets/main/IconAssets/RSR_Icon.png",
+    "IconUrl": "https://raw.githubusercontent.com/IndividualGather/RotationSolverRebornButBetter/main/branding/Logo.png",
     "Punchline": "Analyses combat information every frame and finds the best action. Loads extra rotations from the CustomRotations config folder.",
     "AcceptsFeedback": true,
-    "DownloadLinkInstall": "https://github.com/IndividualGather/RotationSolverReborn-Custom/releases/download/7.5.6.1301/latest.zip",
-    "DownloadLinkUpdate": "https://github.com/IndividualGather/RotationSolverReborn-Custom/releases/download/7.5.6.1301/latest.zip",
-    "DownloadLinkTesting": "https://github.com/IndividualGather/RotationSolverReborn-Custom/releases/download/7.5.6.1301/latest.zip",
-    "LastUpdate": 1791037703,
+    "DownloadLinkInstall": "https://github.com/IndividualGather/RotationSolverRebornButBetter/releases/download/7.5.6.1302/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/IndividualGather/RotationSolverRebornButBetter/releases/download/7.5.6.1302/latest.zip",
+    "DownloadLinkTesting": "https://github.com/IndividualGather/RotationSolverRebornButBetter/releases/download/7.5.6.1302/latest.zip",
+    "LastUpdate": 1791038396,
     "IsHide": false,
     "IsTestingExclusive": false
   }
