@@ -107,6 +107,8 @@ jobs:
           $m.IconUrl = "https://raw.githubusercontent.com/$env:GITHUB_REPOSITORY/main/branding/Logo.png"
           $m.RepoUrl = "https://github.com/$env:GITHUB_REPOSITORY"
           ConvertTo-Json -InputObject $m -Depth 5 | Set-Content $manifestPath -Encoding utf8NoBOM
+          # The in-game logo is embedded from Images/Logo.png.
+          Copy-Item ../fork/branding/Logo.png Images/Logo.png -Force
           dotnet restore RotationSolver/RotationSolver.csproj
           dotnet build --no-restore -c Release RotationSolver/RotationSolver.csproj `
             -p:AssemblyVersion=$v -p:FileVersion=$v -p:PackageVersion=$v -p:InformationalVersion=$v `

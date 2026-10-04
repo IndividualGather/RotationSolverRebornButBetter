@@ -1,0 +1,70 @@
+From 5e0636c7bc2534dcaf8988daf1b3a360516ade8e Mon Sep 17 00:00:00 2001
+From: Individual Gather <individual.gather@noreply.local>
+Date: Sun, 4 Oct 2026 05:34:15 +0200
+Subject: [PATCH 2/2] Brand the fork: teal default accent colour and window
+ title
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+---
+ RotationSolver.Basic/Configuration/Configs.cs |  2 +-
+ RotationSolver/Data/UiString.cs               |  2 +-
+ RotationSolver/UI/Material/M3.cs              | 10 +++++++++-
+ 3 files changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/RotationSolver.Basic/Configuration/Configs.cs b/RotationSolver.Basic/Configuration/Configs.cs
+index 48fb6171..00701e6f 100644
+--- a/RotationSolver.Basic/Configuration/Configs.cs
++++ b/RotationSolver.Basic/Configuration/Configs.cs
+@@ -704,7 +704,7 @@ internal partial class Configs : IPluginConfiguration
+ 	[UI("Interface accent colour",
+ 		Description = "This acts as the primary color that all other colors are derived from.",
+ 		Filter = UiInformation)]
+-	public Vector4 UiAccentColor { get; set; } = new(0.690f, 0.125f, 0.122f, 1f);
++	public Vector4 UiAccentColor { get; set; } = new(0.102f, 0.620f, 0.573f, 1f);
+ 
+ 	[UI("Text size",
+ 		Description = "Scales the text in every Rotation Solver window, on top of Dalamud's own font settings.",
+diff --git a/RotationSolver/Data/UiString.cs b/RotationSolver/Data/UiString.cs
+index a398470b..9bac6f6f 100644
+--- a/RotationSolver/Data/UiString.cs
++++ b/RotationSolver/Data/UiString.cs
+@@ -659,7 +659,7 @@ namespace RotationSolver.Data
+ 		[Description("Disable RSR combat rotation state")]
+ 		Commands_Off,
+ 
+-		[Description("Rotation Solver Reborn Settings v")]
++		[Description("RotationSolverRebornButBetter Settings v")]
+ 		ConfigWindowHeader,
+ 
+ 		[Description("This config is job-specific")]
+diff --git a/RotationSolver/UI/Material/M3.cs b/RotationSolver/UI/Material/M3.cs
+index dd4a8d2d..d2deb71d 100644
+--- a/RotationSolver/UI/Material/M3.cs
++++ b/RotationSolver/UI/Material/M3.cs
+@@ -4,7 +4,9 @@ namespace RotationSolver.UI.Material;
+ 
+ internal static class M3
+ {
+-	public static readonly Vector4 DefaultSeed = M3ColorMath.FromRgb(0xB0201F);
++	// Fork: teal instead of upstream's red (0xB0201F) to tell RotationSolverRebornButBetter apart.
++	public static readonly Vector4 DefaultSeed = M3ColorMath.FromRgb(0x1A9E92);
++	private static readonly Vector4 UpstreamDefaultSeed = M3ColorMath.FromRgb(0xB0201F);
+ 
+ 	// Remember the configured color, not the fallback, or an unusable color would rebuild the theme on every access.
+ 	private static Vector4 _configuredSeed = DefaultSeed;
+@@ -43,6 +45,12 @@ internal static class M3
+ 		get
+ 		{
+ 			var seed = Service.Config.UiAccentColor;
++			// Fork: a config still holding upstream's default (settings are shared with the official plugin) gets the teal default.
++			if (Vector3.Distance(new Vector3(seed.X, seed.Y, seed.Z), new Vector3(UpstreamDefaultSeed.X, UpstreamDefaultSeed.Y, UpstreamDefaultSeed.Z)) < 0.005f)
++			{
++				seed = DefaultSeed;
++			}
++
+ 			if (seed.X != _configuredSeed.X || seed.Y != _configuredSeed.Y || seed.Z != _configuredSeed.Z)
+ 			{
+ 				_configuredSeed = seed;
+-- 
+2.45.1.windows.1
+
