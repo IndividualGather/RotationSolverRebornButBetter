@@ -1,8 +1,8 @@
-From f286a177795400435103b538283a36553c65114a Mon Sep 17 00:00:00 2001
+From 27e10782dc566e6f4d2c6d417b5e34288704db24 Mon Sep 17 00:00:00 2001
 From: Individual Gather <individual.gather@noreply.local>
 Date: Sat, 3 Oct 2026 16:03:16 +0200
-Subject: [PATCH 1/2] Load external rotation assemblies from the
- CustomRotations config folder
+Subject: [PATCH] Load external rotation assemblies from the CustomRotations
+ config folder
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 ---
